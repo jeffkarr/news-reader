@@ -7,10 +7,7 @@
                     <b-list-group>
                         <b-list-group-item
                             v-for="category in newsCategories"
-                            :key="category"
-                            style="color:black"
-                            @click="selectCategory(category)"
-                            button>
+                            :key="category" button @click="categorySelected(category)">
                             <b-row>
                                 <b-col cols="12" class="pt-1 text-left">
                                     <p class="my-0">{{category}}</p>
@@ -29,23 +26,23 @@
 export default {
     name: "SBar2",
     props: {
-        newsCategories: {
-            type: Array,
-            required: true
-        },
         showSidebar: {
             type: Boolean,
+            required: true
+        },
+        newsCategories: {
+            type: Array,
             required: true
         }
     },
     data() {
-        return {
-            open: true
-        };
+        return {}
     },
     methods: {
-        selectCategory(catSelected) {
-            this.$emit("selectCategory", catSelected);
+        categorySelected(selectedCat) {
+            console.log(`categorySelected function called with arg: ${selectedCat}`);
+            console.log('emitting selectedCatEmitted event');
+            this.$emit("selectedCatEmitted", selectedCat);
         }
     }
 };
@@ -77,27 +74,5 @@ export default {
     }
     .list-group-item {  
         background-color: #66ffff;    
-    }
-    ::-webkit-scrollbar {
-        width: 10px;
-        margin-top: 60px;
-        background-color: #226666;
-    }
-    ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: #f5f5f5;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.44, rgb(122, 153, 217)),
-        color-stop(0.72, rgb(73, 125, 189)),
-        color-stop(0.86, rgb(28, 58, 148))
-        );
     }
 </style>

@@ -1,11 +1,11 @@
 <template>
     <b-navbar type="dark" fixed="top" sticky>
         <b-navbar-nav>
-            <b-icon toggleable icon="layout-text-sidebar" font-scale="2" style="color:#66ffff;margin-left:20px;" @mouseenter="toggleSidebar"></b-icon>
+            <b-icon toggleable icon="layout-text-sidebar" font-scale="2" style="color:#66ffff;margin-left:20px;" @click="toggleSidebar"></b-icon>
             <b-navbar-brand style="color:#66ffff;margin-left:20px;font-style:italic;"> Here's the Latest {{category}} News</b-navbar-brand>
         </b-navbar-nav>
         <b-navbar-nav class="justify-content-center">
-            <b-nav-text class="text-left">Article {{articleNbrStr}} of {{articlesMaxCnt}}</b-nav-text>
+            <b-nav-text class="text-left">Article {{articleNbr}} of {{articlesMaxCnt}}</b-nav-text>
         </b-navbar-nav>
         <b-navbar-nav></b-navbar-nav>
     </b-navbar>
@@ -15,12 +15,12 @@
 export default {
     props: {
         category: String,
-        articleNbrStr: String,
-        articlesMaxCnt: String
+        articleNbr: Number,
+        articlesMaxCnt: Number
     },
     data() {
         return {
-            sidebarOpen: false, 
+            showSidebar: false
         }
     },
     methods: {
