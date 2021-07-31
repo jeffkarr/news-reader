@@ -1,24 +1,12 @@
-# news-reader
+# [news-reader](https://xenodochial-spence-23a2b2.netlify.app/)
 
-## Project setup
-```
-yarn install
-```
+News-reader is a front-end application that offers news articles from many english language sources. 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+The app also offers different categories of news. 
 
-### Compiles and minifies for production
-```
-yarn build
-```
+This app uses Vue.js, BootstrapVue.js, Node.js, Express.js and Netlify Cloud Functions. 
 
-### Lints and fixes files
-```
-yarn lint
-```
+The api used in this app is powered by [Mediastack.com](https://mediastack.com/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
