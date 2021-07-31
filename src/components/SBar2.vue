@@ -40,8 +40,6 @@ export default {
     },
     methods: {
         categorySelected(selectedCat) {
-            console.log(`categorySelected function called with arg: ${selectedCat}`);
-            console.log('emitting selectedCatEmitted event');
             this.$emit("selectedCatEmitted", selectedCat);
         }
     }

@@ -60,7 +60,6 @@
             }
         },
         async created () {
-            console.log('Inside created function of App.vue');
             let self = this;
             fetch('/api/getArticles')
             .then(resp => resp.json())
@@ -108,7 +107,6 @@
             }, 
             loadPrevArticle() {
                 if (this.articleIdx === 0) {
-                    console.log('min articles reached')
                     this.showMinArticles = true;
                     setTimeout(() => {
                         this.showMinArticles = false;
@@ -130,7 +128,6 @@
             }, 
             loadNextArticle() {
                 if (this.articleIdx + 1 === this.articlesMaxCnt) {
-                    console.log('max articles reached')
                     this.showMaxArticles = true;
                     setTimeout(() => {
                         this.showMaxArticles = false;

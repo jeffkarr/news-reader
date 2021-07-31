@@ -81,8 +81,6 @@ export default {
         },
         getNotFoundImage: function () {
             let randomNumber = Math.floor(Math.random() * 4);
-            console.log('randomNumber', randomNumber);
-            console.log('this.notFoundArr[randomNumber]', this.notFoundArr[randomNumber]);
             return this.notFoundArr[randomNumber];
         }
     }
